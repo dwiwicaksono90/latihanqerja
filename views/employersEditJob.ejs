@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>edit job</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h2>Edit Job</h2>
+    <form method="POST" action="/employers/editJob/<%= data[0].id %>" >
+        <input type="text"  name="name" value="<%= data[0].name %>" > 
+        <select name="type">
+            <option value="Photography">Photography</option>
+            <option value="Designer">Designer</option>
+            <option value="Programer">Programer</option>
+            <option value="Civil">Civil</option>
+            <option value="Enginer">Enginer</option>
+        </select> 
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>

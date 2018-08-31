@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Employer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h3>Hallo Employer</h3>
+    <a href="/employers/addJob">add Job</a>
+    <a href="/employers/logout">Log Out</a>
+    <hr>
+    
+    <% if (jobs.length === 0){ %>
+        <h3>No Jobs Now</h3>
+    <% } else { %>
+        <table border="1">
+                <thead>
+                    <tr>
+                        <td>Job Id</td>
+                        <td>Job Name</td>
+                        <td>Type</td>
+                        <td>Status</td>
+                        <td>Action</td>
+                    </tr>
+                </thead>
+                <tbody>
+        <% jobs.forEach(job => { %>
+            <tr>
+                <td><%= job.id %></td>
+                <td><%= job.name %></td>
+                <td><%= job.type %></td>
+                    <% if (job.employeId === null){ %>
+                        <td>Belum ada yg ngerjain</td>
+                    <% } else { %>
+                        <td>On Progress</td>
+                    <% } %>
+                <td>
+                    <a href="/employers/editJob/<%= job.id %>">Edit</a> || 
+                    <a href="/employers/deleteJob/<%= job.id %>">Delete</a>
+                </td>
+            </tr>
+    <% }) %>
+    <% } %>
+        </tbody>
+    </table>
+</body>
+</html>

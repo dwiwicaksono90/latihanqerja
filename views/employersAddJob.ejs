@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Add Jobs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h2>Add Jobs here</h2>
+    <br>
+    <form method="POST" action="/employers/addJob">
+    <h5>Job Name</h5> <input type="text"  name="name">
+    <h5>Type Job</h5>  
+    <select name="type">
+        <option value="Photography">Photography</option>
+        <option value="Designer">Designer</option>
+        <option value="Programer">Programer</option>
+        <option value="Civil">Civil</option>
+        <option value="Enginer">Enginer</option>
+    </select> 
+    <button type="submit">Post</button>
+    </form>
+</body>
+</html>
